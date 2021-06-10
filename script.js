@@ -4,7 +4,7 @@ let box = 32;
 
 function criarBG() {
     context.fillStyle = "lightgreen";
-    context.fillReact(0, 0, 16 * box, 16 * box);
+    context.fillRect(0, 0, 16 * box, 16 * box);
 }
 
-criarBG();
+criarBG()
