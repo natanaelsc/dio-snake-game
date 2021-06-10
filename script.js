@@ -27,7 +27,7 @@ function criarCobrinha() {
 
 //Comida da Cobrinha
 function drawFood() {
-    context.fillStyle = "orange";
+    context.fillStyle = "yellow";
     context.fillRect(food.x, food.y, box, box)
 }
 
@@ -58,8 +58,18 @@ function iniciarJogo() {
     if (direction == "left") snakeX -= box;
     if (direction == "up") snakeY -= box;
     if (direction == "down") snakeY += box;
-    // Remove
-    snake.pop();
+
+    // Tamanho da Cobrinha
+    if(snakeX != food.x || snakeY != food.y) {
+        // Remove
+        snake.pop();
+    } else {
+        // Adiciona
+        food.x = Math.floor(Math.random() * 15 + 1) * box;
+        food.y = Math.floor(Math.random() * 15 + 1) * box;
+    }
+
+    
     // Acrescenta ao primeiro campo
     let newHead = {
         x: snakeX,
